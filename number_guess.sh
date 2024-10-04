@@ -38,7 +38,7 @@ else
 fi
 
 RAND=$((1 + $RANDOM % $MAX))
-echo $RAND
+# echo $RAND
 
 READ_GUESS "\nGuess the secret number between 1 and 1000:"
 
@@ -57,4 +57,4 @@ do
 done
 
 SAVE=$($PSQL "INSERT INTO games(user_id, guess_count) VALUES($USER_ID, $COUNT)")
-echo -e "You guessed it in $COUNT tries. The secret number was $GUESS. Nice job!"
+echo -e "You guessed it in $COUNT tries. The secret number was $RAND. Nice job!"
